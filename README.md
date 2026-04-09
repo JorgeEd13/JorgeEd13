@@ -83,9 +83,17 @@ My day-to-day involves processing **100K+ GPS records/day**, optimizing waste co
 
 <div align="center">
 
-<img height="175em" src="https://github-readme-stats.vercel.app/api?username=JorgeEd13&show_icons=true&theme=tokyonight&count_private=true&cache_seconds=86400&hide_border=true"/>
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=JorgeEd13&theme=tokyonight" width="100%"/>
+
+</div>
+
+<div align="center">
+
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=JorgeEd13&theme=tokyonight" height="160em"/>
 &nbsp;
-<img height="175em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JorgeEd13&layout=compact&langs_count=8&theme=tokyonight&cache_seconds=86400&hide_border=true"/>
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=JorgeEd13&theme=tokyonight" height="160em"/>
+&nbsp;
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=JorgeEd13&theme=tokyonight" height="160em"/>
 
 </div>
 
