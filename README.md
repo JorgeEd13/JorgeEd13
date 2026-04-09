@@ -83,8 +83,15 @@ My day-to-day involves processing **100K+ GPS records/day**, optimizing waste co
 
 <div align="center">
 
-<img height="175em" src="https://github-readme-stats.vercel.app/api?username=JorgeEd13&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
-<img height="175em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JorgeEd13&layout=compact&langs_count=8&theme=tokyonight"/>
+<img height="175em" src="https://github-readme-stats.vercel.app/api?username=JorgeEd13&show_icons=true&theme=tokyonight&count_private=true&cache_seconds=86400&hide_border=true"/>
+&nbsp;
+<img height="175em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JorgeEd13&layout=compact&langs_count=8&theme=tokyonight&cache_seconds=86400&hide_border=true"/>
+
+</div>
+
+<div align="center">
+
+<img src="https://streak-stats.demolab.com?user=JorgeEd13&theme=tokyonight&hide_border=true&date_format=j%20M%5B%20Y%5D&cache_seconds=86400" alt="GitHub Streak"/>
 
 </div>
 
