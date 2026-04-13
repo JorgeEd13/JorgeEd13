@@ -1,9 +1,9 @@
 <div align="center">
 
 # Jorge Edson
-### Data Scientist · Data Engineer · GIS & Optimization
+### Data Engineer · AI Engineer · GIS & Optimization
 
-*Transforming raw data into actionable insights — from GPS traces to optimized routes, from transcriptions to structured knowledge.*
+*Building end-to-end AI solutions — from raw GPS traces to conversational agents, from pipeline engineering to actionable insights.*
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jorgeedjson/)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jorge.ed.ribeiro00@gmail.com)
@@ -15,30 +15,36 @@
 
 ## About me
 
-I'm a Data Scientist based in Pernambuco, Brazil, focused on building end-to-end analytical solutions — from data pipeline engineering to interactive geospatial visualizations and NLP applications.
+I'm a Data Engineer and AI Engineer based in Pernambuco, Brazil, building end-to-end solutions that go from raw data ingestion all the way to production AI products.
 
-My day-to-day involves processing **100K+ GPS records/day**, optimizing waste collection routes across **12+ municipalities**, and building tools that non-technical users can actually use. I care about bridging the gap between complex analysis and practical, deployable results.
+My most recent project is a **conversational AI agent** (LangGraph ReAct) that lets non-technical users query a real fleet database in plain Portuguese — no SQL required. It combines a production data pipeline, GPS anomaly detection, and semantic search (RAG) into a single REST API. Supports both Google Gemini and fully local Ollama models.
 
-- Currently working on **fleet telematics, route optimization, and geospatial analytics**
-- Exploring **machine learning** applications in logistics: anomaly detection, predictive maintenance, demand forecasting
-- Background in **frontend development** (JS, HTML, CSS, Node.js) — helps me think about usability when building data products
+Day-to-day I also process **100K+ GPS records/day**, optimize waste collection routes across **12+ municipalities**, and build tools that non-technical users can actually use.
+
+- Currently building **AI agents and RAG systems** applied to real operational problems
+- Experienced in **fleet telematics, route optimization, and geospatial analytics**
+- Exploring **ML in logistics**: anomaly detection, predictive maintenance, demand forecasting
+- Background in **frontend development** (JS, HTML, CSS) — helps me think about usability when building data products
 
 ---
 
 ## Tech Stack
 
+### AI & LLMs
+![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=python&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=chainlink&logoColor=white)
+![Google Gemini](https://img.shields.io/badge/Google%20Gemini-4285F4?style=flat-square&logo=google&logoColor=white)
+![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
+![ChromaDB](https://img.shields.io/badge/ChromaDB-FF6B35?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+
 ### Data Science & Analytics
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
-![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=flat-square&logo=plotly&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=flat-square&logo=python&logoColor=white)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white)
-
-### Machine Learning & NLP
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
-![Google Gemini](https://img.shields.io/badge/Google%20Gemini-4285F4?style=flat-square&logo=google&logoColor=white)
-![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
+![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=flat-square&logo=plotly&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white)
 
 ### Geospatial & GIS
 ![GeoPandas](https://img.shields.io/badge/GeoPandas-139C5A?style=flat-square&logo=python&logoColor=white)
@@ -71,10 +77,11 @@ My day-to-day involves processing **100K+ GPS records/day**, optimizing waste co
 
 | Project | Description | Stack |
 |---|---|---|
+| **🤖 Fleet Intelligence Agent** | Conversational AI agent that answers fleet questions in plain Portuguese — no SQL. LangGraph ReAct loop queries a real GPS database (DuckDB), detects 7 types of GPS anomalies, and searches historical patterns via RAG (ChromaDB). Dual-provider: Google Gemini (cloud, automatic model fallback) and Ollama (fully local, offline). Authenticated REST API with hardware-aware model selection. | LangGraph · FastAPI · ChromaDB · DuckDB · Gemini · Ollama |
 | **🗺️ Heatmap Route Analyzer** | Interactive geospatial heatmaps for waste collection monitoring across 12+ municipalities. Includes AES-256-GCM encryption and signed PDF reports. | GeoPandas · Leaflet.js · Parquet |
 | **🔁 Route Optimizer (TSP)** | 8-stage pipeline for waste collection route optimization using TSP with morphological clustering and NetworkX graph routing over OpenStreetMap. | NetworkX · GeoPandas · OpenStreetMap |
 | **📡 Fleet Telematics Pipeline** | Production data pipeline ingesting 100K+ GPS records/day via REST API (OAuth2). Multi-layer cache (DuckDB + SQLite + Parquet) with incremental fetching. | DuckDB · Parquet · OAuth2 |
-| **🤖 Meeting Minutes Generator** | NLP tool converting raw meeting transcriptions into structured minutes using LLMs (Gemini & Ollama). Packaged as standalone `.exe`. | LLM · python-docx · PyInstaller |
+| **🗣️ Meeting Minutes Generator** | NLP tool converting raw meeting transcriptions into structured minutes using LLMs (Gemini & Ollama). Packaged as standalone `.exe`. | LLM · python-docx · PyInstaller |
 | **🌐 Web Automation — Inlog** | Selenium-based scraper for fleet management platform with GUI and multi-format export, distributed as `.exe` for non-technical users. | Selenium · Tkinter · PyInstaller |
 
 ---
