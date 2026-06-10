@@ -1,3 +1,18 @@
+<!--
+  README_GITHUB.md — FONTE DE VERDADE do README do perfil GitHub (JorgeEd13).
+  Mantido pelo sistema de carreira (Fluxo K do GUIA.md). Atualize AQUI sempre que
+  surgir algo genuinamente interessante para o perfil; depois copie o conteúdo
+  para o README do perfil no GitHub (https://github.com/JorgeEd13).
+
+  Sanitização: nível PÚBLICO/POST (CONFIDENCIALIDADE.md) — sem nome de fornecedor
+  (Inlog/RasCol/Giros), sem cliente/empregador/município, sem R$ absoluto.
+  Idioma: inglês. Enquadramento honesto ([[feedback_honest_cv_framing]]).
+  (Comentários HTML como este NÃO renderizam no GitHub — pode copiar tudo.)
+
+  Última varredura: 2026-06-10 (Fluxo K — adicionado o receivables-agent como vitrine pública;
+  esclarecido que os demais projetos são privados/confidenciais; sem live demo hospedado ainda).
+-->
+
 <div align="center">
 
 # Jorge Edson
@@ -24,7 +39,21 @@ My flagship project is a **conversational AI agent** (LangGraph ReAct) that lets
 - 🗺️ **Geospatial & optimization** — collection-coverage modeling and TSP route optimization over OpenStreetMap
 - 🧠 **Applied ML** — fuel-anomaly detection (LightGBM) with a baseline-first, leakage-free discipline
 - 🎨 **Frontend background** (React / JS / CSS) — keeps me focused on usability when building data products
+- 🌟 **Public, browsable showcase** — [receivables-agent](https://github.com/JorgeEd13/receivables-agent), a clean-room AI agent (most of my production work is private/employer-confidential)
 - 🌍 Open to **remote roles** (Brazil & international)
+
+---
+
+## 🌟 Open-Source Showcase — [receivables-agent](https://github.com/JorgeEd13/receivables-agent)
+
+**A fully public, clean-room AI agent over synthetic accounts-receivable data — the one project you can browse end-to-end.** Most of my production work is employer-confidential, so I rebuilt my AI/full-stack patterns from scratch here, with **zero proprietary code or data**.
+
+- 🧠 **Conversational ReAct agent** (LangGraph) with **defense-in-depth governed text-to-SQL** (read-only connection + allow/deny-list) over **1M+ synthetic invoices**, plus **RAG** (ChromaDB) over a collections-policy knowledge base.
+- 🔌 **Dual-provider** — Google Gemini (cloud) or **Ollama (fully local/offline)**, with active-probe fallback.
+- 🧱 **Full-stack & shipped** — FastAPI + React, one-command **Docker Compose**, **76 offline tests**, a property-based **eval suite** (golden questions), and architecture decisions captured as **ADRs**.
+- ⚙️ **AI-native by design** — an **MCP server**, a **Claude Code skill**, and a `CLAUDE.md`, so the project is operable by coding agents, not just humans.
+
+`LangGraph · FastAPI · React · DuckDB · ChromaDB · Gemini / Ollama · Docker · MCP · pytest`
 
 ---
 
@@ -74,6 +103,8 @@ My flagship project is a **conversational AI agent** (LangGraph ReAct) that lets
 ---
 
 ## Featured Projects
+
+> Most of the projects below are **employer-confidential and live in private repos** — this is the walkthrough, not a set of clickable links. The one you can browse end-to-end is **[receivables-agent](https://github.com/JorgeEd13/receivables-agent)** (above). Happy to do a live code walkthrough of the rest.
 
 | Project | Description | Stack |
 |---|---|---|
