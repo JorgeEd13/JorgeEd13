@@ -29,14 +29,16 @@ My flagship project is a **conversational AI agent** (LangGraph ReAct) that lets
 - 🗺️ **Geospatial & optimization** — collection-coverage modeling and TSP route optimization over OpenStreetMap
 - 🧠 **Applied ML** — fuel-anomaly detection (LightGBM) with a baseline-first, leakage-free discipline
 - 🎨 **Frontend background** (React / JS / CSS) — keeps me focused on usability when building data products
-- 🌟 **Public, browsable showcase** — [receivables-agent](https://github.com/JorgeEd13/receivables-agent), a clean-room AI agent (most of my production work is private/employer-confidential)
+- 🌟 **Public, browsable showcase** — [receivables-agent](https://github.com/JorgeEd13/receivables-agent) (clean-room AI agent) and [machine_scanner](https://github.com/JorgeEd13/machine_scanner) (cross-platform inventory CLI); most of my production work is private/employer-confidential
 - 🌍 Open to **remote roles** (Brazil & international)
 
 ---
 
-## 🌟 Open-Source Showcase — [receivables-agent](https://github.com/JorgeEd13/receivables-agent)
+## 🌟 Open-Source Showcase
 
-**A fully public, clean-room AI agent over synthetic accounts-receivable data — the one project you can browse end-to-end.** Most of my production work is employer-confidential, so I rebuilt my AI/full-stack patterns from scratch here, with **zero proprietary code or data**.
+**Two fully public, clean-room projects you can browse end-to-end.** Most of my production work is employer-confidential, so I rebuilt my patterns from scratch here, with **zero proprietary code or data**.
+
+### 🤖 [receivables-agent](https://github.com/JorgeEd13/receivables-agent) — a shipped AI agent
 
 - 🧠 **Conversational ReAct agent** (LangGraph) with **defense-in-depth governed text-to-SQL** (read-only connection + allow/deny-list) over **1M+ synthetic invoices**, plus **RAG** (ChromaDB) over a collections-policy knowledge base.
 - 🔌 **Dual-provider** — Google Gemini (cloud) or **Ollama (fully local/offline)**, with active-probe fallback.
@@ -44,6 +46,15 @@ My flagship project is a **conversational AI agent** (LangGraph ReAct) that lets
 - ⚙️ **AI-native by design** — an **MCP server**, a **Claude Code skill**, and a `CLAUDE.md`, so the project is operable by coding agents, not just humans.
 
 `LangGraph · FastAPI · React · DuckDB · ChromaDB · Gemini / Ollama · Docker · MCP · pytest`
+
+### 🛠️ [machine_scanner](https://github.com/JorgeEd13/machine_scanner) — a cross-platform machine-inventory CLI
+
+- 🖥️ **One scan of the whole machine** — 16 self-registering, isolated collectors map hardware (CPU, RAM modules, GPU, SMBIOS), physical disks with **SMART health**, and peripherals (USB, monitors decoded from **EDID**, battery, bluetooth, printers) into **text / JSON / interactive HTML**.
+- 📦 **Drop-on-a-USB-stick portability** — one codebase packaged by **PyInstaller** into one binary per OS (Windows / Linux / macOS), published by a **tag-triggered GitHub Actions release** with a per-OS smoke test that fails the build if any collector is lost in the freeze.
+- 🎁 **Product-minded UX** — a plain double-click scans, writes a self-contained HTML report and opens it in the browser, with the filename localized to the OS language.
+- 🧪 **Engineered like production** — **240 offline tests**, ADR-documented decisions, **standard-library only** (psutil the single runtime dependency), CI green across Windows/Linux × Python 3.9–3.13.
+
+`Python · PyInstaller · GitHub Actions · psutil · pytest · stdlib-only`
 
 ---
 
@@ -84,6 +95,12 @@ My flagship project is a **conversational AI agent** (LangGraph ReAct) that lets
 ![OAuth2](https://img.shields.io/badge/OAuth2-EB5424?style=flat-square&logo=auth0&logoColor=white)
 ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-59666C?style=flat-square&logo=python&logoColor=white)
 
+### DevOps, CI & Packaging
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
+![PyInstaller](https://img.shields.io/badge/PyInstaller-1C7EBB?style=flat-square&logo=python&logoColor=white)
+![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
+
 ### Frontend (Background)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
@@ -94,7 +111,7 @@ My flagship project is a **conversational AI agent** (LangGraph ReAct) that lets
 
 ## Featured Projects
 
-> Most of the projects below are **employer-confidential and live in private repos** — this is the walkthrough, not a set of clickable links. The one you can browse end-to-end is **[receivables-agent](https://github.com/JorgeEd13/receivables-agent)** (above). Happy to do a live code walkthrough of the rest.
+> Most of the projects below are **employer-confidential and live in private repos** — this is the walkthrough, not a set of clickable links. The ones you can browse end-to-end are **[receivables-agent](https://github.com/JorgeEd13/receivables-agent)** and **[machine_scanner](https://github.com/JorgeEd13/machine_scanner)** (above). Happy to do a live code walkthrough of the rest.
 
 | Project | Description | Stack |
 |---|---|---|
