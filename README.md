@@ -1,19 +1,9 @@
-<!--
-  README_GITHUB.md — FONTE DE VERDADE do README do perfil GitHub (JorgeEd13).
-  Mantido pelo sistema de carreira (Fluxo K do GUIA.md). Atualize AQUI sempre que
-  surgir algo genuinamente interessante para o perfil; depois copie o conteúdo
-  para o README do perfil no GitHub (https://github.com/JorgeEd13).
-
-  Sanitização: nível PÚBLICO/POST (CONFIDENCIALIDADE.md) — sem nome de fornecedor
-  (Inlog/RasCol/Giros), sem cliente/empregador/município, sem R$ absoluto.
-  Idioma: inglês. Enquadramento honesto ([[feedback_honest_cv_framing]]).
-  (Comentários HTML como este NÃO renderizam no GitHub — pode copiar tudo.)
-
-  Última varredura: 2026-06-10 (Fluxo K — adicionado o receivables-agent como vitrine pública;
-  esclarecido que os demais projetos são privados/confidenciais; sem live demo hospedado ainda).
--->
-
 <div align="center">
+
+<!-- Brand mark (hipercubo). Servido por raw URL de um repo público p/ renderizar
+     no perfil. Alternativa: commitar o logo em JorgeEd13/JorgeEd13/assets/ e usar
+     caminho relativo. Ver memória [[reference_brand_logo]]. -->
+<img src="https://raw.githubusercontent.com/JorgeEd13/machine_scanner/main/assets/logo.png" alt="Jorge Edson" width="150"/>
 
 # Jorge Edson
 ### Data & AI Engineer · GIS & Optimization
