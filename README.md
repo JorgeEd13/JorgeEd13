@@ -6,7 +6,8 @@
 <img src="https://raw.githubusercontent.com/JorgeEd13/machine_scanner/main/assets/logo.png" alt="Jorge Edson" width="150"/>
 
 # Jorge Edson
-### Data & AI Engineer · GIS & Optimization
+### AI & Data Engineer
+#### LLM agents · Data pipelines · GIS & optimization
 
 *Building end-to-end systems — from raw GPS traces to conversational AI agents, from data pipelines to actionable insight.*
 
@@ -20,15 +21,17 @@
 
 ## About me
 
-I'm a **Data & AI Engineer** based in Pernambuco, Brazil. I build end-to-end systems that go all the way from raw data ingestion to production AI — data pipelines, ML models, geospatial analytics, and LLM-powered agents that non-technical users can actually use.
+I'm an **AI & Data Engineer** based in Pernambuco, Brazil. I build systems that run the full distance — from raw data ingestion to production AI — with a bias for things non-technical users can actually operate: **LLM agents, data pipelines, ML models, and geospatial analytics**.
 
-My flagship project is a **conversational AI agent** (LangGraph ReAct) that lets non-technical users query a real fleet database in plain Portuguese — no SQL required. It combines a production data pipeline, GPS anomaly detection, and semantic search (RAG) behind a single authenticated REST API, and runs on either Google Gemini (cloud) or fully local Ollama models.
+I lead with **AI engineering**: my flagship is a **conversational ReAct agent** (LangGraph) that lets non-technical users query a real fleet database in plain language — no SQL. It pairs **governed text-to-SQL** (defense-in-depth: allow/deny-list **+** read-only DB) with **RAG** (ChromaDB) and **GPS anomaly detection** behind a single authenticated REST API, running on either Google Gemini (cloud, active-probe fallback) or fully local Ollama models — packaged so it comes up with one command.
 
-- 🤖 Building **AI agents & RAG systems** on real operational data — governed text-to-SQL, dual cloud/local providers with active fallback
-- 📊 **Data engineering at scale** — multi-GB DuckDB stores, 100K+ GPS records/day, concurrent ingestion
-- 🗺️ **Geospatial & optimization** — collection-coverage modeling and TSP route optimization over OpenStreetMap
-- 🧠 **Applied ML** — fuel-anomaly detection (LightGBM) with a baseline-first, leakage-free discipline
-- 🎨 **Frontend background** (React / JS / CSS) — keeps me focused on usability when building data products
+Underneath the agents is real **data & geospatial engineering**: multi-GB DuckDB stores fed by concurrent ingestion, and a **collection-coverage / route-optimization** stack over OpenStreetMap that's the part of my work I'd call specialist-grade.
+
+- 🤖 **AI agents & RAG on real operational data** — governed text-to-SQL, dual cloud/local providers with active fallback, an **MCP server** for agent-native tooling
+- 📊 **Data engineering at scale** — multi-GB DuckDB stores, 100K+ GPS records/day, hardware-aware concurrent ingestion
+- 🗺️ **Geospatial & optimization** — 4-state collection-coverage modeling and multi-seed 2-opt TSP route optimization over OpenStreetMap
+- 🧠 **Applied ML** — fuel-anomaly detection (LightGBM) with a baseline-first, leakage-free discipline *(a self-supervised TCN encoder is designed/documented as a next phase, not shipped)*
+- 🎨 **Frontend (React / JS / CSS)** — a genuine second axis: authored control libraries, hand-built SVG dataviz, client-side Web Crypto
 - 🌟 **Public, browsable showcase** — [receivables-agent](https://github.com/JorgeEd13/receivables-agent) (clean-room AI agent) and [machine_scanner](https://github.com/JorgeEd13/machine_scanner) (cross-platform inventory CLI); most of my production work is private/employer-confidential
 - 🌍 Open to **remote roles** (Brazil & international)
 
@@ -66,6 +69,7 @@ My flagship project is a **conversational AI agent** (LangGraph ReAct) that lets
 ![Google Gemini](https://img.shields.io/badge/Google%20Gemini-4285F4?style=flat-square&logo=google&logoColor=white)
 ![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
 ![ChromaDB](https://img.shields.io/badge/ChromaDB-FF6B35?style=flat-square&logo=python&logoColor=white)
+![MCP](https://img.shields.io/badge/MCP-000000?style=flat-square&logo=anthropic&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
 
 ### Data Science & ML
@@ -101,7 +105,7 @@ My flagship project is a **conversational AI agent** (LangGraph ReAct) that lets
 ![PyInstaller](https://img.shields.io/badge/PyInstaller-1C7EBB?style=flat-square&logo=python&logoColor=white)
 ![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
 
-### Frontend (Background)
+### Frontend
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
@@ -113,18 +117,37 @@ My flagship project is a **conversational AI agent** (LangGraph ReAct) that lets
 
 > Most of the projects below are **employer-confidential and live in private repos** — this is the walkthrough, not a set of clickable links. The ones you can browse end-to-end are **[receivables-agent](https://github.com/JorgeEd13/receivables-agent)** and **[machine_scanner](https://github.com/JorgeEd13/machine_scanner)** (above). Happy to do a live code walkthrough of the rest.
 
+### 🤖 AI & Agents
+
 | Project | Description | Stack |
 |---|---|---|
-| 🤖 **Fleet Intelligence Agent** | Conversational AI agent (LangGraph ReAct) that answers fleet questions in plain language — no SQL. Governed text-to-SQL (allow/deny-list **+** read-only DB, defense-in-depth), GPS anomaly detection, and RAG (ChromaDB). Dual-provider: Gemini (cloud, active-probe fallback) and Ollama (fully local). Authenticated FastAPI, hardware-aware model selection, first `pytest` suite (36 tests on the SQL guardrail). | LangGraph · FastAPI · ChromaDB · DuckDB · Gemini/Ollama |
-| 📄 **Job-Tailored Resume Builder** *(personal product)* | React 18 SPA that generates per-job résumé variants from a modular, tag-based content bank, with **LLM-assisted adaptation** (structured-JSON extraction) and multi-format export (PDF / Word / Markdown). | React 18 · LLM · localStorage |
-| 🧠 **Fleet ML — Fuel Anomaly Detection** | LightGBM (Tweedie/Huber) with leakage-free temporal validation (**MAE ~2.5 L/day · MAPE ~12.5%**), ranking vehicle-days by recoverable cost. Feature store of **17.6M GPS points → 43k trips**, engineered 100% in SQL/DuckDB. *(A self-supervised TCN encoder is designed/documented as a next phase.)* | LightGBM · DuckDB · pandas |
-| 🗺️ **Collection Coverage Heatmaps** | Interactive geospatial coverage analyzer with a **4-state per-segment model** (collected / possible-manual / GPS-failure / missed) over a projected CRS, plus AES-256-GCM client-side encryption and signed PDF reports. | GeoPandas · Leaflet.js · reportlab |
-| 🔁 **Route Optimizer (TSP)** | 8-stage pipeline for collection-route optimization: morphological clustering + **multi-seed 2-opt / or-opt** TSP + shortest-path routing over OpenStreetMap graphs; temporal route registry (**SCD-2**) in DuckDB. | NetworkX · GeoPandas · DuckDB |
+| 🤖 **Fleet Intelligence Agent** | Conversational AI agent (LangGraph ReAct) that answers fleet questions in plain language — no SQL. **Governed text-to-SQL** (allow/deny-list **+** read-only DB, defense-in-depth), GPS anomaly detection, and RAG (ChromaDB). Dual-provider: Gemini (cloud, active-probe fallback) and Ollama (fully local). Authenticated FastAPI, hardware-aware model selection, `pytest` suite on the SQL guardrail, and a **containerized deploy** — image built and running, one-command **Docker Compose** stack (API + local LLM + HTTPS reverse proxy) with opt-in GPU. | LangGraph · FastAPI · ChromaDB · DuckDB · Gemini/Ollama · Docker |
+| 🗣️ **Meeting Minutes Generator** | Hybrid local-NLP + LLM pipeline turning raw transcripts into structured minutes (DOCX) — speaker diarization and deterministic data extraction cut ~70% of tokens before the LLM. Cloud (Gemini) or local (Ollama). | NLP · LLM · python-docx |
+
+### 📊 Data & ML
+
+| Project | Description | Stack |
+|---|---|---|
+| 🧠 **Fleet ML — Fuel Anomaly Detection** | LightGBM (Tweedie/Huber) with leakage-free temporal validation (**MAPE ~12.5%** per vehicle-day), ranking vehicle-days by recoverable cost. Feature store of **17.6M GPS points → 43k trips**, engineered 100% in SQL/DuckDB. *(A self-supervised TCN encoder is designed/documented as a next phase, not shipped.)* | LightGBM · DuckDB · pandas |
+| 🔬 **Fuel Forensic Audit** | Board-requested audit that reconstructed real fuel use (liters/km) straight from on-board telemetry counters (**90M+ GPS points**), cross-checked it against the fuel-card system, and showed the flagged "anomalies" were **data/measurement errors, not waste** — with driver attribution and an executive PDF for a non-technical audience. | DuckDB · pandas · reportlab |
 | 📡 **Fleet Telematics Pipeline** | Production pipeline ingesting **100K+ GPS records/day** via REST API (OAuth2), with a **dual thread/process concurrency model** (hardware-aware) and a multi-layer DuckDB/Parquet store with incremental fetching. | DuckDB · Parquet · OAuth2 |
-| 🛠️ **RPA Write-Back Automation** | Selenium automation over a fleet portal that goes **beyond scraping**: detects data-entry errors, derives ground truth from GPS, and **writes corrections back** into the system (declarative edit plan + dry-run). Shipped as a standalone `.exe`. | Selenium · Python · PyInstaller |
-| ⏱️ **Real-Time Overtime Alerting** | Daemon that ingests workforce timekeeping into DuckDB (**idempotent, hash-ledgered**), re-derives clock punches from messy positional data, and emits end-of-shift alerts for unclosed overtime — with anti-spam state. | Python · DuckDB |
 | 🔀 **Database Sync Engine** | Standalone tool that **diffs 87M+ rows in ~75s** via a single DuckDB `FULL OUTER JOIN` with conditional aggregation, then merges additively by business key. | DuckDB · SQLite · PyInstaller |
-| 🗣️ **Meeting Minutes Generator** | Hybrid local-NLP + LLM pipeline turning raw transcripts into structured minutes (DOCX) — speaker diarization and deterministic data extraction before the LLM cuts tokens. | NLP · LLM · python-docx |
+
+### 🗺️ Geospatial & Optimization
+
+| Project | Description | Stack |
+|---|---|---|
+| 🗺️ **Collection Coverage Heatmaps** | Interactive geospatial coverage analyzer with a **4-state per-segment model** (collected / possible-manual / GPS-failure / missed) over a projected CRS, topological gap-filling, dwell-based manual-collection inference, plus AES-256-GCM client-side encryption and signed PDF reports. | GeoPandas · Leaflet.js · reportlab |
+| 🔁 **Route Optimizer (TSP)** | 8-stage pipeline for collection-route optimization: morphological clustering + **multi-seed 2-opt / or-opt** TSP + shortest-path routing over OpenStreetMap graphs; temporal route registry (**SCD-2**) in DuckDB. | NetworkX · GeoPandas · DuckDB |
+
+### ⚙️ Automation & Tooling
+
+| Project | Description | Stack |
+|---|---|---|
+| 🛠️ **RPA Write-Back Automation** | Selenium automation over a fleet portal that goes **beyond scraping**: detects data-entry errors, derives ground truth from GPS, and **writes corrections back** into the system (declarative edit plan + dry-run). Shipped as a standalone `.exe`. | Selenium · Python · PyInstaller |
+| ⏱️ **Real-Time Overtime Alerting** | Daemon that ingests workforce timekeeping into DuckDB (**idempotent, hash-ledgered**), re-derives clock punches from messy positional data, and emits end-of-shift **WhatsApp** alerts for forming overtime — with anti-spam state. | Python · DuckDB · WhatsApp |
+| 📄 **Job-Tailored Resume Builder** *(personal product)* | React 18 SPA that generates per-job résumé variants from a modular, tag-based content bank, with **LLM-assisted adaptation** (structured-JSON extraction) and multi-format export (PDF / Word / Markdown). | React 18 · LLM · localStorage |
+| 📊 **Internalization Business Case** *(React + dataviz)* | Interactive board-facing app (React 18, authored control library) with **hand-built SVG charts** and a financial engine (ROI/payback/multi-scenario sensitivity), built with honest number provenance (measured vs. projected). | React 18 · SVG · JS |
 
 ---
 
