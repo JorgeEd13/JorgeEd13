@@ -154,25 +154,26 @@ Underneath the agents is real **data & geospatial engineering**: multi-GB DuckDB
 ## GitHub Stats
 
 <!--
-  ⚠️ Estes cards leem só dados PÚBLICOS. Como a maior parte da atividade do Jorge é
-  em repos privados, para refletir o real: (1) GitHub → Settings → Profile →
-  "Include private contributions on my profile"; (2) self-host do github-readme-stats
-  no Vercel com um PAT próprio (count_private=true). Ver memória [[user_github_private_repos]].
+  ✅ Stats card servido por uma instância PRÓPRIA do github-readme-stats no Vercel
+  (self-host com PAT do Jorge), por isso conta a atividade em repos PRIVADOS.
+  Host: github-readme-stats-seven-rose-28.vercel.app  (env var PAT_1 no Vercel).
+  Flags-chave: count_private=true (soma stars/commits de privados) +
+  include_all_commits=true (faz "Total Commits" contar os privados — sem ela
+  caía p/ ~36/ano só dos públicos; com ela = 609). hide=contribs esconde o
+  "Contributed to: 0" (não há contribuição em repos de terceiros, é esperado).
+  Se o token expirar, o card volta a mostrar só público → gerar novo PAT
+  (fine-grained, Metadata:Read) e atualizar PAT_1 no Vercel + Redeploy.
+  ⚠️ PRIVACIDADE: o card "Top Languages" pode revelar a DISTRIBUIÇÃO de linguagens
+  dos repos privados (não nomes/código). Para ocultar uma linguagem específica,
+  acrescentar &hide=<lang>,<lang> na URL do langs-card. Ver [[user_github_private_repos]]
+  + [[feedback_confidencialidade]].
 -->
 
 <div align="center">
 
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=JorgeEd13&theme=tokyonight" width="100%"/>
-
-</div>
-
-<div align="center">
-
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=JorgeEd13&theme=tokyonight" height="160em"/>
+<img src="https://github-readme-stats-seven-rose-28.vercel.app/api?username=JorgeEd13&count_private=true&include_all_commits=true&hide=contribs&hide_rank=true&show_icons=true&theme=tokyonight&hide_border=true" height="180em" alt="Jorge's GitHub Stats"/>
 &nbsp;
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=JorgeEd13&theme=tokyonight" height="160em"/>
-&nbsp;
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=JorgeEd13&theme=tokyonight" height="160em"/>
+<img src="https://github-readme-stats-seven-rose-28.vercel.app/api/top-langs/?username=JorgeEd13&count_private=true&layout=compact&langs_count=8&hide=jupyter%20notebook&theme=tokyonight&hide_border=true" height="180em" alt="Top Languages"/>
 
 </div>
 
