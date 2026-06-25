@@ -32,14 +32,14 @@ Underneath the agents is real **data & geospatial engineering**: multi-GB DuckDB
 - 🗺️ **Geospatial & optimization** — 4-state collection-coverage modeling and multi-seed 2-opt TSP route optimization over OpenStreetMap
 - 🧠 **Applied ML** — fuel-anomaly detection (LightGBM) with a baseline-first, leakage-free discipline *(a self-supervised TCN encoder is designed/documented as a next phase, not shipped)*
 - 🎨 **Frontend (React / JS / CSS)** — a genuine second axis: authored control libraries, hand-built SVG dataviz, client-side Web Crypto
-- 🌟 **Public, browsable showcase** — [receivables-agent](https://github.com/JorgeEd13/receivables-agent) (clean-room AI agent) and [machine_scanner](https://github.com/JorgeEd13/machine_scanner) (cross-platform inventory CLI); most of my production work is private/employer-confidential
+- 🌟 **Public, browsable showcase** — [receivables-agent](https://github.com/JorgeEd13/receivables-agent) (clean-room AI agent), [machine_scanner](https://github.com/JorgeEd13/machine_scanner) (cross-platform inventory CLI) and [can-telemetry-forge](https://github.com/JorgeEd13/can-telemetry-forge) (J1939 synthetic-telemetry generator); most of my production work is private/employer-confidential
 - 🌍 Open to **remote roles** (Brazil & international)
 
 ---
 
 ## 🌟 Open-Source Showcase
 
-**Two fully public, clean-room projects you can browse end-to-end.** Most of my production work is employer-confidential, so I rebuilt my patterns from scratch here, with **zero proprietary code or data**.
+**Three fully public, clean-room projects you can browse end-to-end.** Most of my production work is employer-confidential, so I rebuilt my patterns from scratch here, with **zero proprietary code or data**.
 
 ### 🤖 [receivables-agent](https://github.com/JorgeEd13/receivables-agent) — a shipped AI agent
 
@@ -58,6 +58,16 @@ Underneath the agents is real **data & geospatial engineering**: multi-GB DuckDB
 - 🧪 **Engineered like production** — **240 offline tests**, ADR-documented decisions, **standard-library only** (psutil the single runtime dependency), CI green across Windows/Linux × Python 3.9–3.13.
 
 `Python · PyInstaller · GitHub Actions · psutil · pytest · stdlib-only`
+
+### 🛰️ [can-telemetry-forge](https://github.com/JorgeEd13/can-telemetry-forge) — a synthetic heavy-equipment telemetry generator
+
+- 🛠️ **The data is the product** — one command generates a **reproducible predictive-maintenance dataset** for a realistically composed fleet (**~106 units, ~916K readings** by default), written as tidy **Parquet / CSV / DuckDB** tables plus a provenance manifest and a generated data dictionary.
+- 📐 **Grounded, not faked** — signals are modeled on the **public SAE J1939 standard** (real SPNs, units, ranges) with documented cross-signal physics whose **correlation signs are asserted in tests**; regions are pinned to **cited public sources** (Köppen climate types + IRI road-roughness), never any real log.
+- 🧩 **Realism most synthetic CAN data skips** — **CAN capability gated by model-year era** (a signal an older bus never reported is `NULL`, *not* zero), a **two-layer fleet model** (composition × signals), a **multi-mode failure label** (overheat / oil-starvation / bearing) derived in one place, and a **declarative registry of labeled anomalies** (obvious + contextual/joint outliers + stuck/drift/dropout sensor faults), each recoverable from a single open-vocabulary `anomaly_type` label.
+- 🔬 **Validated, not asserted** — `forge validate` is a **registry of reference adapters**: every value checked **in-spec** against its J1939 range, a **drift guard** that recomputes a pinned reference (no baseline ever committed), and an **opt-in overlap against real CC-BY OBD telemetry** (histogram intersection **~0.5** vs 200K rows, fetched at run time, never committed, honestly framed as a plausibility check). Wiring that licensed source meant handling real auth and **TLS-trust issues the correct way** (system trust store, never disabling verification).
+- 🎲 **Reproducible by construction** — same config + seed → **byte-identical** output (one seeded generator spawned per unit per stage); **90 offline tests**, ADR-documented, CI green. A future MLOps project will consume it as its data source.
+
+`Python · NumPy · pandas · Parquet/pyarrow · DuckDB · SAE J1939 · pytest`
 
 ---
 
@@ -115,7 +125,7 @@ Underneath the agents is real **data & geospatial engineering**: multi-GB DuckDB
 
 ## Featured Projects
 
-> Most of the projects below are **employer-confidential and live in private repos** — this is the walkthrough, not a set of clickable links. The ones you can browse end-to-end are **[receivables-agent](https://github.com/JorgeEd13/receivables-agent)** and **[machine_scanner](https://github.com/JorgeEd13/machine_scanner)** (above). Happy to do a live code walkthrough of the rest.
+> Most of the projects below are **employer-confidential and live in private repos** — this is the walkthrough, not a set of clickable links. The ones you can browse end-to-end are **[receivables-agent](https://github.com/JorgeEd13/receivables-agent)**, **[machine_scanner](https://github.com/JorgeEd13/machine_scanner)** and **[can-telemetry-forge](https://github.com/JorgeEd13/can-telemetry-forge)** (above). Happy to do a live code walkthrough of the rest.
 
 ### 🤖 AI & Agents
 
