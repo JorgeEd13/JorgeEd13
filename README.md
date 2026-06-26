@@ -32,14 +32,14 @@ Underneath the agents is real **data & geospatial engineering**: multi-GB DuckDB
 - 🗺️ **Geospatial & optimization** — 4-state collection-coverage modeling and multi-seed 2-opt TSP route optimization over OpenStreetMap
 - 🧠 **Applied ML** — fuel-anomaly detection (LightGBM) with a baseline-first, leakage-free discipline *(a self-supervised TCN encoder is designed/documented as a next phase, not shipped)*
 - 🎨 **Frontend (React / JS / CSS)** — a genuine second axis: authored control libraries, hand-built SVG dataviz, client-side Web Crypto
-- 🌟 **Public, browsable showcase** — [receivables-agent](https://github.com/JorgeEd13/receivables-agent) (clean-room AI agent), [machine_scanner](https://github.com/JorgeEd13/machine_scanner) (cross-platform inventory CLI) and [can-telemetry-forge](https://github.com/JorgeEd13/can-telemetry-forge) (J1939 synthetic-telemetry generator); most of my production work is private/employer-confidential
+- 🌟 **Public, browsable showcase** — [receivables-agent](https://github.com/JorgeEd13/receivables-agent) (clean-room AI agent), [machine_scanner](https://github.com/JorgeEd13/machine_scanner) (cross-platform inventory CLI), [can-telemetry-forge](https://github.com/JorgeEd13/can-telemetry-forge) (J1939 synthetic-telemetry generator) and [forge-pdm-mlops](https://github.com/JorgeEd13/forge-pdm-mlops) (the MLOps pipeline on top of it); most of my production work is private/employer-confidential
 - 🌍 Open to **remote roles** (Brazil & international)
 
 ---
 
 ## 🌟 Open-Source Showcase
 
-**Three fully public, clean-room projects you can browse end-to-end.** Most of my production work is employer-confidential, so I rebuilt my patterns from scratch here, with **zero proprietary code or data**.
+**Four fully public, clean-room projects you can browse end-to-end.** Most of my production work is employer-confidential, so I rebuilt my patterns from scratch here, with **zero proprietary code or data**. The last two are a **pair** — a synthetic-telemetry *data engine* and the *ML-in-production system* built on top of it.
 
 ### 🤖 [receivables-agent](https://github.com/JorgeEd13/receivables-agent) — a shipped AI agent
 
@@ -71,6 +71,16 @@ Underneath the agents is real **data & geospatial engineering**: multi-GB DuckDB
 
 `Python · NumPy · pandas · Parquet/pyarrow · DuckDB · SAE J1939 · pytest`
 
+### 🔧 [forge-pdm-mlops](https://github.com/JorgeEd13/forge-pdm-mlops) — the MLOps pipeline on top of the generator
+
+- 🔗 **The downstream half of a pair** — it consumes [can-telemetry-forge](https://github.com/JorgeEd13/can-telemetry-forge) as its data source: *built the data engine, then the ML-in-production system over it.* Models always train on the **full** dataset regenerated from a single cross-machine config + a **pinned** generator version, never on the committed offline fixture (that's smoke/CI only) — so results are honest and byte-reproducible.
+- 🎯 **Model selection as an MLOps process** — two contenders (a scikit-learn LogReg pipeline + LightGBM) behind one interface, **both tracked in MLflow** (params + ROC-AUC + the serialized model), and the winner **registered in the MLflow Model Registry**. "Which model is current, and on what evidence" is a recorded artifact, not folklore — running server-free on a **local SQLite backend**.
+- 🔬 **Honest evaluation baked in** — a **leakage guard that fails the build** if a label-side column reaches the features, **era-gated missingness preserved as signal** (no blind imputation; LightGBM consumes `NaN` natively), and a **unit-grouped** train/test split so no machine's autocorrelated series straddles the boundary. Determinism threads one seed → data → split → metrics.
+- 🧭 **Real-world hardening** — navigated MLflow 3's retired file-store (migrated tracking + registry to local SQLite without giving up server-free), and a guard that **fails loud on an undefined metric** instead of logging a silent `nan`. **27 offline tests**, ADR-documented.
+- 🚧 **In progress (honest status)** — F0–F2 shipped (data, leakage-safe features, train + track + registry). Next: outlier-robustness (multivariate + temporal + autoencoder anomaly detection scored against the generator's ground-truth labels), then **FastAPI serving** and the headline **drift → auto-retrain loop** (Evidently + Prefect, scheduled on free cloud runners). Nothing here claims a live production deployment.
+
+`Python · MLflow · scikit-learn · LightGBM · SQLite · pandas · pytest` *(roadmap: FastAPI · Evidently · Prefect · GitHub Actions)*
+
 ---
 
 ## Tech Stack
@@ -90,6 +100,7 @@ Underneath the agents is real **data & geospatial engineering**: multi-GB DuckDB
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
 ![LightGBM](https://img.shields.io/badge/LightGBM-9ACD32?style=flat-square&logo=python&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
+![MLflow](https://img.shields.io/badge/MLflow-0194E2?style=flat-square&logo=mlflow&logoColor=white)
 ![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=flat-square&logo=plotly&logoColor=white)
 
 ### Geospatial & GIS
@@ -127,7 +138,7 @@ Underneath the agents is real **data & geospatial engineering**: multi-GB DuckDB
 
 ## Featured Projects
 
-> Most of the projects below are **employer-confidential and live in private repos** — this is the walkthrough, not a set of clickable links. The ones you can browse end-to-end are **[receivables-agent](https://github.com/JorgeEd13/receivables-agent)**, **[machine_scanner](https://github.com/JorgeEd13/machine_scanner)** and **[can-telemetry-forge](https://github.com/JorgeEd13/can-telemetry-forge)** (above). Happy to do a live code walkthrough of the rest.
+> Most of the projects below are **employer-confidential and live in private repos** — this is the walkthrough, not a set of clickable links. The ones you can browse end-to-end are **[receivables-agent](https://github.com/JorgeEd13/receivables-agent)**, **[machine_scanner](https://github.com/JorgeEd13/machine_scanner)**, **[can-telemetry-forge](https://github.com/JorgeEd13/can-telemetry-forge)** and **[forge-pdm-mlops](https://github.com/JorgeEd13/forge-pdm-mlops)** (above). Happy to do a live code walkthrough of the rest.
 
 ### 🤖 AI & Agents
 
