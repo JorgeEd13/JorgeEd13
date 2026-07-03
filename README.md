@@ -41,16 +41,18 @@ Underneath the agents is real **data & geospatial engineering**: multi-GB DuckDB
 
 **Four fully public, clean-room projects you can browse end-to-end.** Most of my production work is employer-confidential, so I rebuilt my patterns from scratch here, with **zero proprietary code or data**. The last two are a **pair** — a synthetic-telemetry *data engine* and the *ML-in-production system* built on top of it.
 
-### 🤖 [receivables-agent](https://github.com/JorgeEd13/receivables-agent) — a shipped AI agent
+### 🤖 [receivables-agent](https://github.com/JorgeEd13/receivables-agent) — a shipped AI agent · **[▶ try it live](https://jorgeed-receivables-agent.hf.space)**
 
+- 🚀 **Live, zero-key demo** — [jorgeed-receivables-agent.hf.space](https://jorgeed-receivables-agent.hf.space): a **self-contained Hugging Face Space that runs its own tiny local model** (no API key, no cloud quota, always up, 100% synthetic data). The one-click example questions answer **instantly** (curated *plans* baked into the image, re-run live for fresh numbers); typing your own streams the agent's steps so you **watch it think**.
 - 🧠 **Conversational ReAct agent** (LangGraph) with **defense-in-depth governed text-to-SQL** (read-only connection + allow/deny-list) over **1M+ synthetic invoices**, plus **RAG** (ChromaDB) over a collections-policy knowledge base.
+- 📡 **Live step streaming (SSE)** — `POST /api/chat/stream` surfaces the ReAct loop's tool calls in real time ("querying the ledger", "reading the policy") with an elapsed timer, turning free-tier latency into a "watch it think" experience instead of a frozen screen.
 - 🔌 **Dual-provider** — Google Gemini (cloud) or **Ollama (fully local/offline)**, with active-probe fallback.
 - ⚡ **Semantic plan-cache — cache the *plan*, never the answer** — repeat questions skip the LLM by reusing the agent's *validated tool calls*, but the read-only SQL is **re-executed live** (and re-checked by the guardrail) on every hit, so the number is always current over mutable data. Caching the reasoning, not the output — proven by a test that mutates the ledger and watches the answer follow.
 - 🧩 **Scales from a tiny CPU model to a strong one, no reconfig** — **hardware-aware** model selection (`OLLAMA_MODEL=auto` detects RAM/VRAM and picks the best fit) plus **grammar-constrained tool-calls** that make a *0.5–1.5B* model tool-call reliably. I **measured** that tiny models fail native tool-calling (not from bad JSON — one invents arguments, another writes SQL in prose), then constrained the reply to the tool schema and translated it back → **≤1/5 to 5/5** well-formed calls; tier-gated so strong models stay native.
-- 🧱 **Full-stack & shipped** — FastAPI + React, one-command **Docker Compose**, **110 offline tests**, a property-based **eval suite** (golden questions), and architecture decisions captured as **ADRs**.
+- 🧱 **Full-stack & shipped** — FastAPI + React, one-command **Docker Compose**, a self-contained **Hugging Face deploy image**, **118 offline tests**, a property-based **eval suite** (golden questions), and architecture decisions captured as **ADRs**.
 - ⚙️ **AI-native by design** — an **MCP server**, a **Claude Code skill**, and a `CLAUDE.md`, so the project is operable by coding agents, not just humans.
 
-`LangGraph · FastAPI · React · DuckDB · ChromaDB · Gemini / Ollama · Docker · MCP · pytest`
+`LangGraph · FastAPI · React · DuckDB · ChromaDB · Gemini / Ollama · Docker · Hugging Face Spaces · SSE · MCP · pytest`
 
 ### 🛠️ [machine_scanner](https://github.com/JorgeEd13/machine_scanner) — a cross-platform machine-inventory CLI
 
