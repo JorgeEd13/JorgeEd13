@@ -1,15 +1,12 @@
 <div align="center">
 
-<!-- Brand mark (hipercubo). Servido por raw URL de um repo público p/ renderizar
-     no perfil. Alternativa: commitar o logo em JorgeEd13/JorgeEd13/assets/ e usar
-     caminho relativo. Ver memória [[reference_brand_logo]]. -->
 <img src="https://raw.githubusercontent.com/JorgeEd13/machine_scanner/main/assets/logo.png" alt="Jorge Edson" width="150"/>
 
 # Jorge Edson
 ### AI & Data Engineer
-#### LLM agents · Data pipelines · GIS & optimization
+#### LLM agents · ML in production · Data pipelines
 
-*Building end-to-end systems — from raw GPS traces to conversational AI agents, from data pipelines to actionable insight.*
+*From raw GPS traces to conversational AI agents — end-to-end systems, shipped.*
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jorgeedjson/)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jorge.ed.ribeiro00@gmail.com)
@@ -19,86 +16,94 @@
 
 ---
 
+<div align="center">
+
+## ▶ Two live demos — click and try them
+
+**No signup. No API key. They're just up.**
+
+| 🤖 **[Receivables Agent](https://jorgeed-receivables-agent.hf.space)** | 🔧 **[PdM Pipeline](https://forge-pdm-mlops-958199756179.us-central1.run.app/demo)** |
+|:---|:---|
+| Ask an AI agent about an invoice ledger in plain language. Runs its own **tiny local model** — no key, no quota. | Score live machine telemetry for failure risk. Runs on **managed cloud** (Cloud Run + Neon) at **$0**. |
+| [jorgeed-receivables-agent.hf.space](https://jorgeed-receivables-agent.hf.space) | [forge-pdm-mlops…/demo](https://forge-pdm-mlops-958199756179.us-central1.run.app/demo) |
+
+</div>
+
+---
+
 ## About me
 
-I'm an **AI & Data Engineer** based in Pernambuco, Brazil. I build systems that run the full distance — from raw data ingestion to production AI — with a bias for things non-technical users can actually operate: **LLM agents, data pipelines, ML models, and geospatial analytics**.
+I'm an **AI & Data Engineer** in Pernambuco, Brazil. I build systems that run the full distance — raw ingestion to production AI — with a bias for things non-technical users can actually operate.
 
-I lead with **AI engineering**: my flagship is a **conversational ReAct agent** (LangGraph) that lets non-technical users query a real fleet database in plain language — no SQL. It pairs **governed text-to-SQL** (defense-in-depth: allow/deny-list **+** read-only DB) with **RAG** (ChromaDB) and **GPS anomaly detection** behind a single authenticated REST API, running on either Google Gemini (cloud, active-probe fallback) or fully local Ollama models — packaged so it comes up with one command.
+My flagship is a **conversational ReAct agent** (LangGraph) that lets non-technical users query a real fleet database in plain language: governed text-to-SQL, RAG, and GPS anomaly detection behind one authenticated API, on cloud or fully-local models. Underneath it is real data engineering — multi-GB DuckDB stores fed by concurrent ingestion — and a collection-coverage / route-optimization stack over OpenStreetMap that's the part of my work I'd call specialist-grade.
 
-Underneath the agents is real **data & geospatial engineering**: multi-GB DuckDB stores fed by concurrent ingestion, and a **collection-coverage / route-optimization** stack over OpenStreetMap that's the part of my work I'd call specialist-grade.
-
-- 🤖 **AI agents & RAG on real operational data** — governed text-to-SQL, dual cloud/local providers with active fallback, an **MCP server** for agent-native tooling
-- 📊 **Data engineering at scale** — multi-GB DuckDB stores, 100K+ GPS records/day, hardware-aware concurrent ingestion
-- 🗺️ **Geospatial & optimization** — 4-state collection-coverage modeling and multi-seed 2-opt TSP route optimization over OpenStreetMap
-- 🧠 **Applied ML** — fuel-anomaly detection (LightGBM) with a baseline-first, leakage-free discipline *(a self-supervised TCN encoder is designed/documented as a next phase, not shipped)*
-- 🎨 **Frontend (React / JS / CSS)** — a genuine second axis: authored control libraries, hand-built SVG dataviz, client-side Web Crypto
-- 🌟 **Public, browsable showcase** — [receivables-agent](https://github.com/JorgeEd13/receivables-agent) (clean-room AI agent), [machine_scanner](https://github.com/JorgeEd13/machine_scanner) (cross-platform inventory CLI), [can-telemetry-forge](https://github.com/JorgeEd13/can-telemetry-forge) (J1939 synthetic-telemetry generator) and [forge-pdm-mlops](https://github.com/JorgeEd13/forge-pdm-mlops) (the MLOps pipeline on top of it); most of my production work is private/employer-confidential
+- 🤖 **AI agents & RAG** — governed text-to-SQL, dual cloud/local providers, an MCP server for agent-native tooling
+- 🔧 **ML in production** — a full MLOps spine: train → registry → serve → drift → retrain, live on managed cloud
+- 📊 **Data engineering at scale** — multi-GB DuckDB, 100K+ GPS records/day, hardware-aware concurrent ingestion
+- 🗺️ **Geospatial & optimization** — 4-state coverage modeling and 2-opt TSP routing over OpenStreetMap
+- 🎨 **Frontend (React / JS / CSS)** — a genuine second axis: authored control libraries, hand-built SVG dataviz
 - 🌍 Open to **remote roles** (Brazil & international)
 
 ---
 
 ## 🌟 Open-Source Showcase
 
-**Four fully public, clean-room projects you can browse end-to-end.** Most of my production work is employer-confidential, so I rebuilt my patterns from scratch here, with **zero proprietary code or data**. The last two are a **pair** — a synthetic-telemetry *data engine* and the *ML-in-production system* built on top of it.
+**Four clean-room projects you can browse end-to-end.** Most of my production work is employer-confidential, so I rebuilt my patterns from scratch here, with **zero proprietary code or data**.
 
-### 🤖 [receivables-agent](https://github.com/JorgeEd13/receivables-agent) — a shipped AI agent · **[▶ try it live](https://jorgeed-receivables-agent.hf.space)**
+> **The honesty boundary, stated once:** every dataset here is **synthetic**. The numbers below are demonstrations of *process* — diagnosis, governance, measurement — not product performance. The hosted PdM model is a **labelled demo**, and nothing here claims a live production deployment. Each repo says the same thing on every surface it appears.
 
-- 🚀 **Live, zero-key demo** — [jorgeed-receivables-agent.hf.space](https://jorgeed-receivables-agent.hf.space): a **self-contained Hugging Face Space that runs its own tiny local model** (no API key, no cloud quota, always up, 100% synthetic data). The one-click example questions answer **instantly** (curated *plans* baked into the image, re-run live for fresh numbers); typing your own streams the agent's steps so you **watch it think**.
-- 🧠 **Conversational ReAct agent** (LangGraph) with **defense-in-depth governed text-to-SQL** (read-only connection + allow/deny-list) over **1M+ synthetic invoices**, plus **RAG** (ChromaDB) over a collections-policy knowledge base.
-- 📡 **Live step streaming (SSE)** — `POST /api/chat/stream` narrates the ReAct loop in real time ("checking the collections policy on…" → "found 12 rows in the ledger") with an elapsed timer, turning free-tier latency into a "watch it think" experience instead of a frozen screen.
-- 🛡️ **Graceful degradation at the step ceiling** — the tiny model **never dead-ends on an apology**: an identical tool call is de-duped so the step budget isn't wasted, and if the loop runs out it **finalizes with a best-effort answer naming what it found + the gap** ("I pulled the overdue list but didn't rank it — ask me to sort by amount"). The one step cap is split into a loop guard (steps) and a wait guard (a soft wall-clock budget), so a longer run is *visible and productive*, never a silent thrash.
-- 🔌 **Dual-provider** — Google Gemini (cloud) or **Ollama (fully local/offline)**, with active-probe fallback.
-- ⚡ **Semantic plan-cache — cache the *plan*, never the answer** — repeat questions skip the LLM by reusing the agent's *validated tool calls*, but the read-only SQL is **re-executed live** (and re-checked by the guardrail) on every hit, so the number is always current over mutable data. Caching the reasoning, not the output — proven by a test that mutates the ledger and watches the answer follow.
-- 🧩 **Scales from a tiny CPU model to a strong one, no reconfig** — **hardware-aware** model selection (`OLLAMA_MODEL=auto` detects RAM/VRAM and picks the best fit) plus **grammar-constrained tool-calls** that make a *0.5–1.5B* model tool-call reliably. I **measured** that tiny models fail native tool-calling (not from bad JSON — one invents arguments, another writes SQL in prose), then constrained the reply to the tool schema and translated it back → **≤1/5 to 5/5** well-formed calls; tier-gated so strong models stay native.
-- 🎨 **A themed, bilingual UI** — a **light/dark theme** (follows the OS, with a persisted manual toggle) and an **EN/PT-BR** language switch, via a lightweight, dependency-free locale layer. The honesty boundary is stated in the UI: i18n localizes the interface, not the agent's answers (which come from the model and an English policy corpus — not machine-translated); shares one design language with the forge-pdm-mlops demo.
-- 🧱 **Full-stack & shipped** — FastAPI + React, one-command **Docker Compose**, a self-contained **Hugging Face deploy image**, a broad **offline test suite**, a property-based **eval suite** (golden questions), and architecture decisions captured as **ADRs**.
-- ⚙️ **AI-native by design** — an **MCP server**, a **Claude Code skill**, and a `CLAUDE.md`, so the project is operable by coding agents, not just humans.
+The last two are a **pair**: a synthetic-telemetry *data engine*, and the *ML-in-production system* built on top of it.
 
-`LangGraph · FastAPI · React · DuckDB · ChromaDB · Gemini / Ollama · Docker · Hugging Face Spaces · SSE · MCP · pytest`
+---
 
-### 🛠️ [machine_scanner](https://github.com/JorgeEd13/machine_scanner) — a cross-platform machine-inventory CLI
+### 🤖 [receivables-agent](https://github.com/JorgeEd13/receivables-agent) · **[▶ try it live](https://jorgeed-receivables-agent.hf.space)**
 
-- 🖥️ **One scan of the whole machine** — 16 self-registering, isolated collectors map hardware (CPU, RAM modules, GPU, SMBIOS), physical disks with **SMART health**, and peripherals (USB, monitors decoded from **EDID**, battery, bluetooth, printers) into **text / JSON / interactive HTML**.
-- 📦 **Drop-on-a-USB-stick portability** — one codebase packaged by **PyInstaller** into one binary per OS (Windows / Linux / macOS), published by a **tag-triggered GitHub Actions release** with a per-OS smoke test that fails the build if any collector is lost in the freeze.
-- 🎁 **Product-minded UX** — a plain double-click scans, writes a self-contained HTML report and opens it in the browser, with the filename localized to the OS language.
-- 🧪 **Engineered like production** — **240 offline tests**, ADR-documented decisions, **standard-library only** (psutil the single runtime dependency), CI green across Windows/Linux × Python 3.9–3.13.
+**A shipped AI agent** — ask an invoice ledger questions in plain language, get answers backed by live SQL.
+
+- 🛡️ **Governed text-to-SQL** — defense-in-depth (read-only connection **+** allow/deny-list), plus RAG over a collections-policy corpus.
+- 🧩 **Makes a 0.5B model tool-call reliably** — tiny models fail native tool-calling. I measured it, then grammar-constrained the reply to the tool schema: **1/5 → 5/5**.
+- ⚡ **Caches the *plan*, never the answer** — repeat questions reuse validated tool calls, but the SQL **re-executes live**, so the number is always current.
+- ⚙️ **AI-native** — an **MCP server**, a Claude Code skill, and a `CLAUDE.md`: operable by coding agents, not just humans.
+
+`LangGraph · FastAPI · React · DuckDB · ChromaDB · Gemini/Ollama · Docker · HF Spaces · MCP`
+
+---
+
+### 🔧 [forge-pdm-mlops](https://github.com/JorgeEd13/forge-pdm-mlops) · **[▶ try it live](https://forge-pdm-mlops-958199756179.us-central1.run.app/demo)**
+
+**A complete MLOps spine** — train → registry → serve → drift → retrain → cloud, running end to end.
+
+- 🚦 **A worse model cannot reach production** — metric-gated promotion + rollback, asserted by test. Auto-retrain routes through the **same gate**, so it can never mean *auto-degrade*.
+- 🐛 **The bug was in the data, not the model** — the classifier scored 0.55 (chance). Rather than tune it, I measured *why*, traced it upstream, and fixed it there → **0.82 ROC-AUC**.
+- 🧭 **Then I measured that 0.82 is the *data's* ceiling** — three probes converged; one **refuted my own hypothesis** and I reported it anyway. Knowing the ceiling is the license to stop optimizing.
+- 🌩️ **Operated on managed cloud, not just containerized** — Cloud Run + managed Postgres (Neon) at **$0**, every prediction logged to the managed DB and read back.
+
+`MLflow · LightGBM · Optuna · PyTorch · Evidently · Prefect · FastAPI · Docker · Cloud Run · Postgres (Neon)`
+
+---
+
+### 🛰️ [can-telemetry-forge](https://github.com/JorgeEd13/can-telemetry-forge)
+
+**A synthetic heavy-equipment telemetry generator** — where the *data is the product*. One command builds a reproducible predictive-maintenance dataset for a realistic fleet.
+
+- 📐 **Grounded, not faked** — signals modeled on the public **SAE J1939** standard (real SPNs, units, ranges); climates and road roughness pinned to cited public sources.
+- 🧩 **The realism most synthetic CAN data skips** — capability is **gated by model-year era**: a signal an old bus never reported is `NULL`, *not* zero. Failures **degrade progressively** toward the event.
+- 🔌 **Down to the wire** — a from-scratch **J1939 frame encoder/decoder** powers fault injection at the transport layer: corruption and truncation written into the *bytes*, decoded back as a receiver would see them.
+- 🎲 **Byte-identical from config + seed.** 135 offline tests, ADR-documented.
+
+`Python · NumPy · pandas · Parquet · DuckDB · SAE J1939 · pytest`
+
+---
+
+### 🛠️ [machine_scanner](https://github.com/JorgeEd13/machine_scanner)
+
+**A cross-platform machine-inventory CLI** — one double-click scans the whole machine and opens an interactive HTML report.
+
+- 🖥️ **16 self-registering, fault-isolated collectors** — CPU, RAM modules, GPU, SMBIOS, disks with **SMART**, monitors decoded from **EDID**. A new probe is one module, zero changes elsewhere.
+- 📦 **One binary per OS** — PyInstaller, shipped by a tag-triggered Actions release whose per-OS smoke test **fails the build if a collector is lost in the freeze**.
+- 🧪 **Standard-library only** (psutil the single runtime dependency), **240 offline tests**, CI green on Windows/Linux × Python 3.9–3.13.
 
 `Python · PyInstaller · GitHub Actions · psutil · pytest · stdlib-only`
-
-### 🛰️ [can-telemetry-forge](https://github.com/JorgeEd13/can-telemetry-forge) — a synthetic heavy-equipment telemetry generator
-
-- 🛠️ **The data is the product** — one command generates a **reproducible predictive-maintenance dataset** for a realistically composed fleet (**~134 units** of distinct equipment models across six climates by default), written as tidy **Parquet / CSV / DuckDB** tables plus a provenance manifest and a generated data dictionary.
-- 📐 **Grounded, not faked** — signals are modeled on the **public SAE J1939 standard** (real SPNs, units, ranges) with documented cross-signal physics whose **correlation signs are asserted in tests**; regions are pinned to **cited public sources** (Köppen climate types + IRI road-roughness), never any real log.
-- 🧩 **Realism most synthetic CAN data skips** — **CAN capability gated by model-year era** (a signal an older bus never reported is `NULL`, *not* zero), a **two-layer fleet model** (composition × signals), a **multi-mode failure label** (overheat / oil-starvation / bearing) derived in one place, and a **declarative registry of labeled anomalies** (obvious + contextual/joint outliers + stuck/drift/dropout sensor faults), each recoverable from a single open-vocabulary `anomaly_type` label.
-- 📈 **Failures that *progressively degrade* (v0.2.0)** — the failing mode's signature now **builds toward the event** over the hours before it (coolant climbs, oil pressure sags, vibration rises), the way real machines fail — not a flag that flips out of nowhere. I caught this by *measuring* the consuming model scoring at chance (≈ 0.55) and tracing the cause to the **data, not the model**: pre-failure rows were identical to healthy ones. Fixing the generator's physics (no label leak) took a downstream model to **≈ 0.82 ROC-AUC**; two alternative hazard rebalances were measured and **rejected**.
-- 🔬 **Validated, not asserted** — `forge validate` is a **registry of reference adapters**: every value checked **in-spec** against its J1939 range, a **drift guard** that recomputes a pinned reference (no baseline ever committed), and an **opt-in overlap against real CC-BY OBD telemetry** (histogram intersection **~0.5** vs 200K rows, fetched at run time, never committed, honestly framed as a plausibility check). Wiring that licensed source meant handling real auth and **TLS-trust issues the correct way** (system trust store, never disabling verification).
-- 🌍 **Diversity as data, not code** — Tier-2 broadens realism (distinct **equipment models** with their own reliability + signature profiles, six public-grounded climates, configurable **seasons**) entirely through a **declarative catalog of multipliers/offsets** — *no new schema columns*. A `--season heatwave` shifts ambient and tilts failure hazards across the whole fleet: the exact knob a future drift demo will turn.
-- 🔌 **Down to the wire (Tier 3)** — a **from-scratch J1939 frame-level encoder/decoder** (per-PGN byte/bit layout, scaling/offset, the standard's *not-available*/*error* sentinels) powers **transport-layer fault injection**: byte corruption, stale re-sent frames, error codes, and truncated DLCs — injected into the **bytes** and **decoded back** exactly as a receiver would see them, each labeled and recoverable, with the raw frames available as an opt-in `can_frames` artifact.
-- 🎲 **Reproducible by construction** — same config + seed → **byte-identical** output (one seeded generator spawned per unit per stage); **135 offline tests**, ADR-documented, CI green. A companion MLOps project consumes it as its data source.
-
-`Python · NumPy · pandas · Parquet/pyarrow · DuckDB · SAE J1939 · pytest`
-
-### 🔧 [forge-pdm-mlops](https://github.com/JorgeEd13/forge-pdm-mlops) — the MLOps pipeline on top of the generator
-
-- 🔗 **The downstream half of a pair** — it consumes [can-telemetry-forge](https://github.com/JorgeEd13/can-telemetry-forge) as its data source: *built the data engine, then the ML-in-production system over it.* Models always train on the **full** dataset regenerated from a single cross-machine config + a **pinned** generator version, never on the committed offline fixture (that's smoke/CI only) — so results are honest and byte-reproducible.
-- 🎯 **Model selection as an MLOps process** — two contenders (a scikit-learn LogReg pipeline + LightGBM) behind one interface, **both tracked in MLflow** (params + ROC-AUC + the serialized model), and the winner **registered in the MLflow Model Registry**. "Which model is current, and on what evidence" is a recorded artifact, not folklore — running server-free on a **local SQLite backend**.
-- 🐛 **The bug was in the data, not the model** — the classifier scored ≈ 0.55 (chance). Instead of tuning it, I **measured why**: a failing unit's pre-failure rows were statistically identical to its healthy rows — no signal to learn. The root cause was upstream, in the generator (failures had a *when* but no *path toward* it). I fixed it *there* — progressive pre-failure degradation, no label leak — and the same model reached **≈ 0.82 ROC-AUC**; two attempts to also rebalance the failure hazard were measured and **rejected**. Finding that my own showcase was measuring at chance — and saying so — is the point.
-- 🔬 **Honest evaluation baked in** — a **leakage guard that fails the build** if a label-side column reaches the features, **era-gated missingness preserved as signal** (no blind imputation; LightGBM consumes `NaN` natively), and a **unit-grouped** train/test split so no machine's autocorrelated series straddles the boundary. Determinism threads one seed → data → split → metrics.
-- 🧹 **Outlier robustness, scored against ground truth** — an **unsupervised detection ladder** (IsolationForest + robust-covariance Mahalanobis · a temporal stuck/drift detector · a CPU-only PyTorch autoencoder) graded against the generator's ground-truth labels, which are read **only to score** the detectors and tune thresholds — never as a model input, so the leakage guard stays intact (asserted by test). When the first temporal detector scored ~0.02 F1 and flagged 85% of rows, I **diagnosed it, rewrote it to the right signature, and documented the negative result** rather than hide it. Output: a leakage-safe `signal_suspect` feature + a data-quality watcher that fails loud on an outlier-rate spike.
-- 🎛️ **Tuning as a tracked, honest process — and I measured that it doesn't move the number** — an **Optuna** HPO study per model scored by **unit-grouped cross-validation** (so the search can't leak a unit across folds *or* tune against the held-out test), with per-model diagnostics logged as **artifacts** (importance / calibration / threshold sweep / learning curve) and **training watchers** (overfit-gap + majority-baseline) that fail loud. Run end-to-end on the full data, the search lifts held-out AUC by **+0.003 (LightGBM) / +0.000 (LogReg)** — essentially nothing: the ≈0.82 came from the *data* (the fix above), not the tuning. "Not an accuracy play" is a measurement, not a hedge; a near-zero delta reported plainly is the honest deliverable. Both models pass the audit on the full 134-unit data (the overfit trip is a smoke-fixture artifact, kept and tested as the guard working).
-- 🧬 **Temporal modelling — measured, and the deep model didn't earn its place** — since tuning was exhausted (above), the honest lever was *representation* (the failure is a gradual degradation ramp; a per-row model discards the trajectory). A **three-rung ladder** on the *same* unit split / seed / test rows: per-row LightGBM → causal temporal-feature LightGBM → a dilated **causal TCN** (PyTorch). Temporal structure **helps a little (+0.007)**, but the TCN lands **below** the cheap, interpretable temporal-feature LightGBM — the deep model doesn't pay for its complexity (tuning the TCN by grouped-CV doesn't rescue it either). Reported either way. The causal convolution makes "no peeking at the future" a **structural** property, and the geometry was fixed a priori — never tuned against the test rows.
-- 🧭 **Is the ceiling the model or the data? — measured, not asserted** — instead of chasing a better model forever, I **characterized the ceiling** from three independent angles: a **decomposition** of AUC by time-to-failure horizon and failure mode (predictability lives near the event; most of the window is healthy-and-unpredictable *by construction*), a deliberately **label-leaking upper-bound** (an oracle model bounding the *irreducible* error — a fenced diagnostic, never a reported metric, asserted by test), and an **out-of-fold stacking redundancy probe** (if a meta-learner can't beat its best base model, the models are information-redundant → the ceiling is the data). All three converge: **≈0.82 is the data's limit, not the pipeline's.** Characterizing the ceiling is the license to *stop* optimizing and go build the production spine.
-- 🚦 **Governed model lifecycle — a worse model can't reach production** — the first build on the production spine: **metric-gated promotion** to a `production` alias + **rollback**. `promote` reads the candidate's and the incumbent's ROC-AUC from their MLflow source runs and moves the alias **only if the candidate clears the gate** — a worse candidate does *not* promote (asserted by test), and that rejection is a **governed, structured outcome, not an exception**. Rollback restores the prior version deterministically (recorded as a tag). Built on MLflow 3 **version aliases** — the current API, since the classic `Staging`/`Production` stages are deprecated.
-- 🌐 **Serving that follows the registry — no redeploy** — a **FastAPI** app serves the `production`-**aliased** model, so a promotion or rollback (above) changes what `/predict` answers **with no redeploy and no config edit** — the alias is the contract between governance and serving. `/predict` returns the failure **probability** (not a thresholded label — the real output the gate measures) and accepts era-`NULL` as `null`; `/health` returns 200 **even with no model loaded** (a `model_loaded` flag, so *up* ≠ *ready*); `/model-info` exposes the live version and the metric it was gated on. `docker compose up` brings up serving **and** the MLflow UI on one shared registry volume.
-- 🔁 **The closed loop that can't auto-degrade — the marquee** — drift → auto-retrain, wired end to end: an **Evidently** drift report over the model's input signals feeds a **share-of-features** decision (my own auditable policy — a single noisy column doesn't trigger a retrain), and a **Prefect** flow runs `detect drift → [if drift] retrain → promote-or-hold` **in-process**. The load-bearing part: the promote step is the **same metric gate from above, unchanged** — a retrained model that doesn't beat the incumbent is **held, not shipped** (proven by a test that sets an impossible gate bar). So "auto-retrain" can never mean "auto-degrade": the guarantee isn't hoping the retrain is good, it's the gate for when it isn't. (The drift library is version-pinned for cross-machine reproducibility, the same discipline as the pinned generator.)
-- 🧭 **Real-world hardening** — navigated MLflow 3's retired file-store (migrated tracking + registry to local SQLite without giving up server-free), built promotion on **aliases not the deprecated stages**, a guard that **fails loud on an undefined metric** instead of logging a silent `nan`, and — caught only by a multi-model test run — the fact that loading a `models:/…@production` URI **pins MLflow 3's process-global registry URI** (which silently redirected a co-resident training run's model registration); the fix loads from a **client-resolved artifact path** so serving touches no global state. **125 offline tests**, ADR-documented.
-- 🚀 **Hosted, clickable — a live endpoint you can hit right now** → **[`/health`](https://jorgeed-forge-pdm-mlops.hf.space/health)** · **[`/model-info`](https://jorgeed-forge-pdm-mlops.hf.space/model-info)** · **[`/docs`](https://jorgeed-forge-pdm-mlops.hf.space/docs)** (Hugging Face Spaces). The serving image is **self-contained** — it **bakes a demo model at startup** so a fresh cloud instance answers a real prediction the moment it boots (a fresh deploy's registry is otherwise empty). The honesty boundary is kept by *scope, not hiding*: the baked model is trained on the **smoke fixture** and labelled a **demo everywhere** (a `demo=fixture` tag, `/model-info`, the README) — serving a demo is not *reporting* a fixture metric; the ≈0.82 number is the full-data model `pdm train` produces locally. Shipping it for real surfaced the container-only bugs a local run hides: HF ignores `dockerfile_path` (so the bake image *is* the literal `Dockerfile`), a pip-installed package resolves its data files off `site-packages` not the repo, and the demo bake belongs at **startup** (runtime user, runtime path, after the LFS fixture is smudged), not build time.
-- 🌩️ **Operated on managed cloud — not just containerized** → **[interactive demo `/demo`](https://forge-pdm-mlops-958199756179.us-central1.run.app/demo)** on **Google Cloud Run** (a *managed serverless container runtime*, not a VM) with a **managed Postgres** (Neon) behind it. The demo page scores your J1939 parameters **and logs each prediction to the managed database, reading them back** — so the managed resource has a real production job, not a decorative one. `store_pg.open_log()` takes **any** SQLAlchemy URL, so the same code runs on tmp SQLite in tests and Postgres in prod, and **graceful-degrade is a hard invariant** — with no `DATABASE_URL` the demo simply doesn't persist, so adding the managed resource can't break any other deploy. Secrets live in **Secret Manager** (nothing in the repo), the image builds via **Cloud Build**. The whole thing runs at **$0** (Cloud Run scale-to-zero + Neon free tier). This closes the gate that "an image that builds" explicitly does **not**: *operate a managed cloud runtime with a managed resource in production* — distinct from operating a Kubernetes cluster.
-- 📤 **Bring your own data (F8)** — `/demo` also takes a **CSV/Parquet upload** → per-row failure probabilities + a summary, with a **fuzzy column-mapping** step (stdlib `difflib` + a J1939 synonym table, no new dependency) so a tester's own header names resolve to the nine signals, and a *partial* dataset still scores (unmapped signals become era-`NULL`). Guardrails fail loud (size/row caps read as `cap+1` so a huge upload can't exhaust memory; non-J1939 files → a clear 4xx, never a 500), and **nothing uploaded is stored**.
-- 🎨 **A friendly, themed, bilingual demo (F9)** — the `/demo` turns nine raw J1939 fields into **friendly inputs** (units + tooltips + bounded ranges + one-click *healthy / failing-bearing / overheating* presets + a plain-language risk meter), with a **light/dark theme** (follows the OS, with a persisted manual toggle) and an **EN/PT-BR** language switch — all self-contained (no CDN), sharing one design language with the receivables demo. The honesty boundary holds in both languages: i18n localizes the UI, not the model output (the `demo=fixture` banner and the ≈0.82 framing stay intact).
-- ✅ **A complete production spine (honest status)** — F0–F2.8 + **F3 + F4 + F5 + F6 + F7 + F8 + F9** shipped (roadmap **F0–F9 complete**): the **modelling arc is closed by design** (data, leakage-safe features, train + track + registry, ground-truth-scored outlier robustness, grouped-CV HPO + diagnostics + watchers, temporal modelling, and a measured ceiling characterization), and the **production spine runs end to end, is reachable, and runs on managed cloud** — **train → registry → serve → drift → retrain → cloud-scheduled**, with a **live `/health`** and an **interactive, themed, bilingual `/demo` on Cloud Run + a managed Postgres** (with CSV/Parquet upload): gated promotion + rollback, FastAPI serving of the promoted model, the drift → auto-retrain loop that routes every retrain through the same gate, a hosted free-tier deploy, and a managed-cloud deploy. Nothing here claims a live *production* deployment — the served model is a labelled demo; the loop is a demonstrated closed loop on synthetic data.
-
-`Python · MLflow · scikit-learn · LightGBM · Optuna · PyTorch · Evidently · Prefect · FastAPI · React/JS · Docker · Google Cloud Run · Postgres (Neon) · SQLite · pandas · pytest` *(managed-cloud deploy — a live, interactive /demo on Cloud Run + managed Postgres; friendly inputs + light/dark theme + EN/PT-BR i18n, self-contained)*
 
 ---
 
@@ -113,83 +118,75 @@ Underneath the agents is real **data & geospatial engineering**: multi-GB DuckDB
 ![MCP](https://img.shields.io/badge/MCP-000000?style=flat-square&logo=anthropic&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
 
-### Data Science & ML
+### ML & MLOps
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
 ![LightGBM](https://img.shields.io/badge/LightGBM-9ACD32?style=flat-square&logo=python&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
 ![MLflow](https://img.shields.io/badge/MLflow-0194E2?style=flat-square&logo=mlflow&logoColor=white)
-![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=flat-square&logo=plotly&logoColor=white)
+![Optuna](https://img.shields.io/badge/Optuna-2A6EBB?style=flat-square&logo=python&logoColor=white)
 
-### Geospatial & GIS
-![GeoPandas](https://img.shields.io/badge/GeoPandas-139C5A?style=flat-square&logo=python&logoColor=white)
-![Shapely](https://img.shields.io/badge/Shapely-2C8EBB?style=flat-square&logo=python&logoColor=white)
-![Leaflet](https://img.shields.io/badge/Leaflet.js-199900?style=flat-square&logo=leaflet&logoColor=white)
-![OpenStreetMap](https://img.shields.io/badge/OpenStreetMap-7EBC6F?style=flat-square&logo=openstreetmap&logoColor=white)
-![NetworkX](https://img.shields.io/badge/NetworkX-008080?style=flat-square&logo=python&logoColor=white)
-
-### Data Engineering & Databases
-![DuckDB](https://img.shields.io/badge/DuckDB-FFF000?style=flat-square&logo=duckdb&logoColor=black)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
-![Apache Parquet](https://img.shields.io/badge/Parquet-50ABF1?style=flat-square&logo=apache&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
-
-### Automation & APIs
-![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=flat-square&logo=selenium&logoColor=white)
-![REST API](https://img.shields.io/badge/REST%20API-FF6C37?style=flat-square&logo=postman&logoColor=white)
-![OAuth2](https://img.shields.io/badge/OAuth2-EB5424?style=flat-square&logo=auth0&logoColor=white)
-![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-59666C?style=flat-square&logo=python&logoColor=white)
-
-### DevOps, CI & Packaging
+### Cloud, DevOps & CI
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Google Cloud Run](https://img.shields.io/badge/Cloud%20Run-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
 ![PyInstaller](https://img.shields.io/badge/PyInstaller-1C7EBB?style=flat-square&logo=python&logoColor=white)
 ![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
 
-### Frontend
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+### Data Engineering & Databases
+![DuckDB](https://img.shields.io/badge/DuckDB-FFF000?style=flat-square&logo=duckdb&logoColor=black)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
+![Apache Parquet](https://img.shields.io/badge/Parquet-50ABF1?style=flat-square&logo=apache&logoColor=white)
+![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=flat-square&logo=selenium&logoColor=white)
+
+### Geospatial & Frontend
+![GeoPandas](https://img.shields.io/badge/GeoPandas-139C5A?style=flat-square&logo=python&logoColor=white)
+![Leaflet](https://img.shields.io/badge/Leaflet.js-199900?style=flat-square&logo=leaflet&logoColor=white)
+![OpenStreetMap](https://img.shields.io/badge/OpenStreetMap-7EBC6F?style=flat-square&logo=openstreetmap&logoColor=white)
+![NetworkX](https://img.shields.io/badge/NetworkX-008080?style=flat-square&logo=python&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 ---
 
 ## Featured Projects
 
-> Most of the projects below are **employer-confidential and live in private repos** — this is the walkthrough, not a set of clickable links. The ones you can browse end-to-end are **[receivables-agent](https://github.com/JorgeEd13/receivables-agent)**, **[machine_scanner](https://github.com/JorgeEd13/machine_scanner)**, **[can-telemetry-forge](https://github.com/JorgeEd13/can-telemetry-forge)** and **[forge-pdm-mlops](https://github.com/JorgeEd13/forge-pdm-mlops)** (above). Happy to do a live code walkthrough of the rest.
+> These are **employer-confidential and live in private repos** — a walkthrough, not clickable links. The four you *can* browse end-to-end are above. Happy to do a live code walkthrough of the rest.
 
 ### 🤖 AI & Agents
 
 | Project | Description | Stack |
 |---|---|---|
-| 🤖 **Fleet Intelligence Agent** | Conversational AI agent (LangGraph ReAct) that answers fleet questions in plain language — no SQL. **Governed text-to-SQL** (allow/deny-list **+** read-only DB, defense-in-depth), GPS anomaly detection, and RAG (ChromaDB). Dual-provider: Gemini (cloud, active-probe fallback) and Ollama (fully local). Authenticated FastAPI, hardware-aware model selection, `pytest` suite on the SQL guardrail, and a **containerized deploy** — image built and running, one-command **Docker Compose** stack (API + local LLM + HTTPS reverse proxy) with opt-in GPU. | LangGraph · FastAPI · ChromaDB · DuckDB · Gemini/Ollama · Docker |
-| 🗣️ **Meeting Minutes Generator** | Hybrid local-NLP + LLM pipeline turning raw transcripts into structured minutes (DOCX) — speaker diarization and deterministic data extraction cut ~70% of tokens before the LLM. Cloud (Gemini) or local (Ollama). | NLP · LLM · python-docx |
+| 🤖 **Fleet Intelligence Agent** | Conversational ReAct agent that answers fleet questions in plain language — no SQL. Governed text-to-SQL, GPS anomaly detection, RAG. Dual-provider (cloud + fully-local), containerized, one-command Compose stack. | LangGraph · FastAPI · ChromaDB · DuckDB · Docker |
+| 🗣️ **Meeting Minutes Generator** | Hybrid local-NLP + LLM pipeline turning raw transcripts into structured minutes — diarization and deterministic extraction cut ~70% of tokens before the LLM. | NLP · LLM · python-docx |
 
 ### 📊 Data & ML
 
 | Project | Description | Stack |
 |---|---|---|
-| 🧠 **Fleet ML — Fuel Anomaly Detection** | LightGBM (Tweedie/Huber) with leakage-free temporal validation (**MAPE ~12.5%** per vehicle-day), ranking vehicle-days by recoverable cost. Feature store of **17.6M GPS points → 43k trips**, engineered 100% in SQL/DuckDB. *(A self-supervised TCN encoder is designed/documented as a next phase, not shipped.)* | LightGBM · DuckDB · pandas |
-| 🔬 **Fuel Forensic Audit** | Board-requested audit that reconstructed real fuel use (liters/km) straight from on-board telemetry counters (**90M+ GPS points**), cross-checked it against the fuel-card system, and showed the flagged "anomalies" were **data/measurement errors, not waste** — with driver attribution and an executive PDF for a non-technical audience. | DuckDB · pandas · reportlab |
-| 📡 **Fleet Telematics Pipeline** | Production pipeline ingesting **100K+ GPS records/day** via REST API (OAuth2), with a **dual thread/process concurrency model** (hardware-aware) and a multi-layer DuckDB/Parquet store with incremental fetching. | DuckDB · Parquet · OAuth2 |
-| 🔀 **Database Sync Engine** | Standalone tool that **diffs 87M+ rows in ~75s** via a single DuckDB `FULL OUTER JOIN` with conditional aggregation, then merges additively by business key. | DuckDB · SQLite · PyInstaller |
+| 🧠 **Fleet ML — Fuel Anomaly Detection** | LightGBM (Tweedie/Huber) with leakage-free temporal validation (**MAPE ~12.5%** per vehicle-day), ranking vehicle-days by recoverable cost. Feature store: **17.6M GPS points → 43k trips**, engineered in SQL/DuckDB. | LightGBM · DuckDB · pandas |
+| 🔬 **Fuel Forensic Audit** | Board-requested audit that reconstructed real fuel use from on-board telemetry (**90M+ GPS points**), cross-checked the fuel-card system, and showed the flagged "anomalies" were **measurement errors, not waste**. | DuckDB · pandas · reportlab |
+| 📡 **Fleet Telematics Pipeline** | Production pipeline ingesting **100K+ GPS records/day** via OAuth2 REST, with a hardware-aware dual thread/process concurrency model over a multi-layer DuckDB/Parquet store. | DuckDB · Parquet · OAuth2 |
+| 🔀 **Database Sync Engine** | Standalone tool that **diffs 87M+ rows in ~75s** via a single DuckDB `FULL OUTER JOIN`, then merges additively by business key. | DuckDB · SQLite · PyInstaller |
 
 ### 🗺️ Geospatial & Optimization
 
 | Project | Description | Stack |
 |---|---|---|
-| 🗺️ **Collection Coverage Heatmaps** | Interactive geospatial coverage analyzer with a **4-state per-segment model** (collected / possible-manual / GPS-failure / missed) over a projected CRS, topological gap-filling, dwell-based manual-collection inference, plus AES-256-GCM client-side encryption and signed PDF reports. | GeoPandas · Leaflet.js · reportlab |
-| 🔁 **Route Optimizer (TSP)** | 8-stage pipeline for collection-route optimization: morphological clustering + **multi-seed 2-opt / or-opt** TSP + shortest-path routing over OpenStreetMap graphs; temporal route registry (**SCD-2**) in DuckDB. | NetworkX · GeoPandas · DuckDB |
+| 🗺️ **Collection Coverage Heatmaps** | Coverage analyzer with a **4-state per-segment model** (collected / possible-manual / GPS-failure / missed), topological gap-filling, and dwell-based manual-collection inference. AES-256-GCM client-side encryption, signed PDF reports. | GeoPandas · Leaflet.js · reportlab |
+| 🔁 **Route Optimizer (TSP)** | 8-stage collection-route optimizer: morphological clustering + **multi-seed 2-opt** TSP over OpenStreetMap graphs, with a temporal route registry (**SCD-2**) in DuckDB. | NetworkX · GeoPandas · DuckDB |
 
 ### ⚙️ Automation & Tooling
 
 | Project | Description | Stack |
 |---|---|---|
-| 🛠️ **RPA Write-Back Automation** | Selenium automation over a fleet portal that goes **beyond scraping**: detects data-entry errors, derives ground truth from GPS, and **writes corrections back** into the system (declarative edit plan + dry-run). Shipped as a standalone `.exe`. | Selenium · Python · PyInstaller |
-| ⏱️ **Real-Time Overtime Alerting** | Daemon that ingests workforce timekeeping into DuckDB (**idempotent, hash-ledgered**), re-derives clock punches from messy positional data, and emits end-of-shift **WhatsApp** alerts for forming overtime — with anti-spam state. | Python · DuckDB · WhatsApp |
-| 📄 **Job-Tailored Resume Builder** *(personal product)* | React 18 SPA that generates per-job résumé variants from a modular, tag-based content bank, with **LLM-assisted adaptation** (structured-JSON extraction) and multi-format export (PDF / Word / Markdown). | React 18 · LLM · localStorage |
-| 📊 **Internalization Business Case** *(React + dataviz)* | Interactive board-facing app (React 18, authored control library) with **hand-built SVG charts** and a financial engine (ROI/payback/multi-scenario sensitivity), built with honest number provenance (measured vs. projected). | React 18 · SVG · JS |
+| 🛠️ **RPA Write-Back Automation** | Selenium automation that goes **beyond scraping**: detects data-entry errors, derives ground truth from GPS, and **writes corrections back** into the portal (declarative edit plan + dry-run). | Selenium · Python · PyInstaller |
+| ⏱️ **Real-Time Overtime Alerting** | Daemon that ingests timekeeping into DuckDB (**idempotent, hash-ledgered**), re-derives clock punches from messy data, and emits **WhatsApp** alerts for forming overtime. | Python · DuckDB · WhatsApp |
+| 📊 **Internalization Business Case** | Board-facing React app with **hand-built SVG charts** and a financial engine (ROI/payback/multi-scenario sensitivity), built with honest number provenance (measured vs. projected). | React 18 · SVG · JS |
+| 📄 **Job-Tailored Resume Builder** | React SPA generating per-job résumé variants from a modular, tag-based content bank, with LLM-assisted adaptation and multi-format export. | React 18 · LLM · localStorage |
 
 ---
 
@@ -199,16 +196,13 @@ Underneath the agents is real **data & geospatial engineering**: multi-GB DuckDB
   ✅ Stats card servido por uma instância PRÓPRIA do github-readme-stats no Vercel
   (self-host com PAT do Jorge), por isso conta a atividade em repos PRIVADOS.
   Host: github-readme-stats-seven-rose-28.vercel.app  (env var PAT_1 no Vercel).
-  Flags-chave: count_private=true (soma stars/commits de privados) +
-  include_all_commits=true (faz "Total Commits" contar os privados — sem ela
-  caía p/ ~36/ano só dos públicos; com ela = 609). hide=contribs esconde o
-  "Contributed to: 0" (não há contribuição em repos de terceiros, é esperado).
+  Flags-chave: count_private=true + include_all_commits=true (faz "Total Commits"
+  contar os privados). hide=contribs esconde o "Contributed to: 0" (esperado).
   Se o token expirar, o card volta a mostrar só público → gerar novo PAT
   (fine-grained, Metadata:Read) e atualizar PAT_1 no Vercel + Redeploy.
-  ⚠️ PRIVACIDADE: o card "Top Languages" pode revelar a DISTRIBUIÇÃO de linguagens
-  dos repos privados (não nomes/código). Para ocultar uma linguagem específica,
-  acrescentar &hide=<lang>,<lang> na URL do langs-card. Ver [[user_github_private_repos]]
-  + [[feedback_confidencialidade]].
+  ⚠️ PRIVACIDADE: "Top Languages" pode revelar a DISTRIBUIÇÃO de linguagens dos repos
+  privados (não nomes/código). Para ocultar uma linguagem: &hide=<lang> na URL.
+  Ver [[user_github_private_repos]] + [[feedback_confidencialidade]].
 -->
 
 <div align="center">
