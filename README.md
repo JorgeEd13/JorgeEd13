@@ -77,6 +77,7 @@ The last two are a **pair**: a synthetic-telemetry *data engine*, and the *ML-in
 - 🐛 **The bug was in the data, not the model** — the classifier scored 0.55 (chance). Rather than tune it, I measured *why*, traced it upstream, and fixed it there → **0.82 ROC-AUC**.
 - 🧭 **Then I measured that 0.82 is the *data's* ceiling** — three probes converged; one **refuted my own hypothesis** and I reported it anyway. Knowing the ceiling is the license to stop optimizing.
 - 🌩️ **Operated on managed cloud, not just containerized** — Cloud Run + managed Postgres (Neon) at **$0**, every prediction logged to the managed DB and read back.
+- 🏗️ **The infrastructure is code, adopted from a live deploy** — the managed stack (API service, a **separate worker job**, registry, secrets, IAM) is defined in **Terraform**, imported from the running system until `plan` came back clean. Writing the IAM down is what proved the permission model was *wrong*.
 
 `MLflow · LightGBM · Optuna · PyTorch · Evidently · Prefect · FastAPI · Docker · Cloud Run · Postgres (Neon)`
 
@@ -99,9 +100,10 @@ The last two are a **pair**: a synthetic-telemetry *data engine*, and the *ML-in
 
 **A cross-platform machine-inventory CLI** — one double-click scans the whole machine and opens an interactive HTML report.
 
-- 🖥️ **16 self-registering, fault-isolated collectors** — CPU, RAM modules, GPU, SMBIOS, disks with **SMART**, monitors decoded from **EDID**. A new probe is one module, zero changes elsewhere.
+- 🖥️ **17 self-registering, fault-isolated collectors** — CPU, RAM modules, GPU, SMBIOS, disks with **SMART**, monitors decoded from **EDID**. A new probe is one module, zero changes elsewhere.
+- 🔒 **A second, scoped binary whose spec *excludes* 12 of those collectors** — it answers "can this machine run a local AI model?" and **cannot** read network addresses or serial numbers, which is a property of the artifact rather than a claim about how it was invoked.
 - 📦 **One binary per OS** — PyInstaller, shipped by a tag-triggered Actions release whose per-OS smoke test **fails the build if a collector is lost in the freeze**.
-- 🧪 **Standard-library only** (psutil the single runtime dependency), **240 offline tests**, CI green on Windows/Linux × Python 3.9–3.13.
+- 🧪 **Standard-library only** (psutil the single runtime dependency), **307 offline tests**, CI green on Windows/Linux × Python 3.9–3.13.
 
 `Python · PyInstaller · GitHub Actions · psutil · pytest · stdlib-only`
 
