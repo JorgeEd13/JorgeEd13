@@ -46,6 +46,23 @@ My flagship is a **conversational ReAct agent** (LangGraph) that lets non-techni
 
 ---
 
+## 🏠 A product I sell
+
+**Its own section on purpose — a different licence and a different audience from the showcase below.** `stillroom` is **source-available under [PolyForm Shield 1.0.0](https://github.com/JorgeEd13/stillroom/blob/main/LICENSE.md)**: read it, run it, modify it internally — you may not resell it as a competing product. **Source-available, not open source.**
+
+### 🏠 [stillroom](https://github.com/JorgeEd13/stillroom)
+
+**A private document assistant that runs entirely on a company's own hardware** — ask questions about your contracts, handbooks and price lists in Word, PDF, Excel or CSV, and get answers that cite the document they came from, with nothing sent to any cloud.
+
+- 🔒 **No cloud path exists to switch on.** There is no fallback provider field, and unknown config keys are rejected rather than ignored — so one cannot be added by a hopeful edit.
+- 🙈 **The documents are never sent to me either.** Indexing runs inside the build on the client's own machine; the only thing that travels back is a readiness report with filenames and question text withheld.
+- 🤐 **It refuses.** When nothing in the documents is relevant, the model is never called — it says so instead of improvising.
+- 🔍 **The privacy claim is auditable, not promised.** The source a client runs is the source published here, so their IT can check what leaves the machine instead of taking my word for it.
+
+`Python · FastAPI · ChromaDB · Ollama · Docker · bge-m3 · zero-build UI`
+
+---
+
 ## 🌟 Open-Source Showcase
 
 **Four clean-room projects you can browse end-to-end.** Most of my production work is employer-confidential, so I rebuilt my patterns from scratch here, with **zero proprietary code or data**.
