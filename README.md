@@ -11,6 +11,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jorgeedjson/)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jorge.ed.ribeiro00@gmail.com)
 [![GitHub followers](https://img.shields.io/github/followers/JorgeEd13?style=for-the-badge&logo=github&logoColor=white&color=181717)](https://github.com/JorgeEd13)
+[![Upwork](https://img.shields.io/badge/Upwork-available%20for%20work-2b7a78?style=for-the-badge)](https://www.upwork.com/freelancers/jorgeed13)
 
 </div>
 
@@ -60,6 +61,8 @@ My flagship is a **conversational ReAct agent** (LangGraph) that lets non-techni
 - 🔍 **The privacy claim is auditable, not promised.** The source a client runs is the source published here, so their IT can check what leaves the machine instead of taking my word for it.
 
 `Python · FastAPI · ChromaDB · Ollama · Docker · bge-m3 · zero-build UI`
+
+**Want it set up on your own machines?** I take that on as fixed-price work through my Upwork profile: **[upwork.com/freelancers/jorgeed13](https://www.upwork.com/freelancers/jorgeed13)**. *Independent freelancer — not affiliated with, or endorsed by, Upwork.*
 
 ---
 
